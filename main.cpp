@@ -4,7 +4,7 @@
 #include "Nodo.cpp"
 using namespace std;
 
-//& 	[TO-DO List]
+//& [TO-DO List]
 //! Proyecto hecho por:
 //! > Jaiber E. Arellano I.		C.I: 30.338.584
 //! > Williangel. A Quevedo V.		C.I: 32.115.376
