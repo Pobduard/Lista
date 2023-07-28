@@ -130,6 +130,7 @@ void eliminar(){
 	fflush(stdin);
 	cin >> pos;
 	pos--;
+	cout << "now pos: " << pos << endl;
 	if(pos > lista->size){
 		cout << "Posicion Mayor a la cantida de tareas disponibles ... volviendo al menu" << endl;
 		system("PAUSE");

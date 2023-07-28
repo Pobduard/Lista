@@ -157,6 +157,11 @@ void Nodo<T>::append(Nodo<T> *&head, T value){
 
 	last->siguiente = new_node;	//& Añadimos en la pos final el nuevo nodo
 	new_node->anterior = last;
+
+	if(size == 0){
+		start = new_node;
+		new_node->anterior = NULL;
+		}
 	size++;
 	end = new_node;
 	return;
@@ -260,20 +265,46 @@ void Nodo<T>::deleteNode(Nodo<T> *&head, int position){
 	Nodo<T>* temp = head;
 
 	//& Si se desea eliminar la cabeza
-	if(position == 0){	
-		head = temp->siguiente;		//& Modificamos la cabeza
-		head->anterior = NULL;
-		start = head;
-		cout << "deleted Head" << endl;
-		size--;
-		delete temp;
-		return;
+	if(position == 0){
+		if(size > 1){
+			temp = start;
+			head = temp->siguiente;		//& Modificamos la cabeza
+			head->anterior = NULL;
+			start = head;
+			cout << "deleted pos 0" << endl;
+			size--;
+			system("PAUSE");
+			delete temp;
+			return;
+		}
+		if(size == 1){
+			temp = start;
+			temp->siguiente = NULL;
+			temp->anterior =NULL;
+			start = NULL;
+			end = NULL;
+			cout << "deleted Head" << endl;
+			size--;
+			system("PAUSE");
+			delete temp;
+			return;
+		}
+		if(size == 0){
+			cout << "Already Empty, Nothing to delete" << endl; 
+			system("PAUSE");
+			return;
+			}
 	}
 
 	if(position == size){
+		cout << "pos=size" << endl;
+	}
+	if(position == size){
+		cout << "pos=size" << endl;
 		temp = end->anterior;
-		delete temp->siguiente;
 		end = temp;
+		delete temp->siguiente;
+		return;
 	}
 
 	//& Buscamos el valor PREVIO al de la posicion que deseamos eliminar
@@ -283,6 +314,7 @@ void Nodo<T>::deleteNode(Nodo<T> *&head, int position){
 
 	//& Si el valor que buscamos no existia en la lista/array
 	if(temp == NULL || temp->siguiente == NULL){
+		cout << "no exitia" << endl;
 		return;
 	}
 
