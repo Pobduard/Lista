@@ -112,7 +112,7 @@ void agregar(){
 			lista->insertarDespues(lista, pos, txt);
 			break;
 		case 3:
-			lista->append(txt);
+			lista->append(lista, txt);
 			break;
 		default:
 			cout << "No una opcion disponible." << endl;

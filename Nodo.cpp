@@ -171,7 +171,7 @@ template <typename T>
 //& Añade dato despues de la posicion pasada
 void Nodo<T>::insertarDespues(Nodo<T>*& node, int index, T value){
 	Nodo<T>* prev_node = new Nodo<T>();
-	prev_node = node;
+	prev_node = start;
 
 	if(index >= size){
 		append(node, value);
@@ -193,13 +193,13 @@ void Nodo<T>::insertarDespues(Nodo<T>*& node, int index, T value){
 
 	Nodo<T>* next_node = prev_node->siguiente;		//& Nuevo a añadir
 
-	//& Metemos el nodo nuevo a apuntar lo mismo que el anterior
-	new_node->siguiente = next_node;
-	next_node->anterior = new_node;
-
 	//& hacemos que el anterior apunte al nuevo
 	prev_node->siguiente = new_node;
 	new_node->anterior = prev_node;
+
+	//& Metemos el nodo nuevo a apuntar lo mismo que el anterior
+	new_node->siguiente = next_node;
+	next_node->anterior = new_node;
 	size++;
 };
 
