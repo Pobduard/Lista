@@ -7,7 +7,7 @@ using namespace std;
 //& 	[TO-DO List]
 //! Proyecto hecho por:
 //! > Jaiber E. Arellano I.		C.I: 30.338.584
-//! > Williangel. A Quevedo V.		C.I: 32.
+//! > Williangel. A Quevedo V.		C.I: 32.115.376
 
 void agregar();
 void eliminar();
@@ -21,6 +21,9 @@ int main(){
 
 	cout << "Bienvenido a la To-Do List, basicamente una lista de tareas, a la cual agregar, eliminar, o modificar tareas ya agregadas" << endl;
 	cout << "Al mismo tiempo que ver que tareas han sido agregadas, cual es la posterior/anterior y demas" << endl;
+	cout << "Hecho Por: " << endl;
+	cout << "Jaiber E. Arellano I.		C.I: 30.338.584" << endl;
+	cout << "Williangel. A Quevedo V.		C.I: 32.115.376" << endl;
 	system("PAUSE");
 	system("cls");
 

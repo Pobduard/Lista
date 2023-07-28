@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <vector>
 #include "Nodo.cpp"
-
 using namespace std;
+
+//! Codigo de Demostracion y Prueba de diferentes funciones, tambien para debug
+
 int main(){
 
 	cout << "Try it" << endl;
@@ -56,22 +58,25 @@ int main(){
 	// fixNextLink->anterior = fixLastLink;
 	cout << "Current size on Reverso == " << arr->getSize() << endl;
 	auto newerReverso = arr->getNodeAt((arr->getSize()-1));
-	newerReverso->listarReverso();
+	arr->listarReverso();
+
 
 
 	cout << "\\\\\\\\" << endl;
+		cout << "===[4 Deletes]===" << endl;
 	arr->deleteNode(arr, 0);
 	cout << "Current size after deleting head 1 times == " << arr->size << endl;
 	auto sizeTest2 = arr->getNodeAt(0);
-	cout << "Adress: "<< sizeTest2 << endl;
-	cout << "Value: "<< sizeTest2->value << endl;
+	cout << "Head Adress: "<< sizeTest2 << endl;
+	cout << "Head Value: "<< sizeTest2->value << endl;
 
 	arr->deleteNode(arr, 0);
 	cout << "Current size after deleting head 2 times == " << arr->getSize() << endl;
 	sizeTest2 = arr->getNodeAt(0);
-	cout << "Adress: "<< sizeTest2 << endl;
-	cout << "Value: "<< sizeTest2->value << endl;
+	cout << "Head Adress: "<< sizeTest2 << endl;
+	cout << "Head Value: "<< sizeTest2->value << endl;
 	auto sizeTest = arr->getNodeAt(5);
+	cout << "Reverso: " << endl;
 	sizeTest->listarReverso();
 
 	
